@@ -1,4 +1,4 @@
 .git
 .env
 airflow_settings.yaml
-.astrocloud/
+astrocloud
