@@ -22,7 +22,7 @@ def api_dag(dag_list_number):
     print("testing the dag")
     return dag_list_number
 
-dag = DAG('hello_world', description='Hello World DAG',
+dag = DAG('hello_world_test_gh', description='Hello World DAG',
           schedule_interval='0 12 * * *',
           start_date=datetime(2017, 3, 20), 
           catchup=False,
