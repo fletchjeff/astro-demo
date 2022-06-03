@@ -102,7 +102,7 @@ def _get_activity(day_name) -> str:
     max_active_runs=1,
     # This defines how often your DAG will run, or the schedule by which DAG runs are created. It can be
     # defined as a cron expression or custom timetable. This DAG will run daily.
-    schedule_interval="@daily",
+    schedule_interval="@hourly",
     # Default settings applied to all tasks within the DAG; can be overwritten at the task level.
     default_args={
         "owner": "community", # This defines the value of the "owner" column in the DAG view of the Airflow UI
