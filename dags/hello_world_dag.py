@@ -12,9 +12,6 @@ args = {
     'retries': 0
 }
 
-#response = requests.get("http://192.168.1.101:5000/api")
-#dag_list = json.loads(response.text)
-
 def print_hello():
     return 'Hello world from first Airflow DAG!'
 
