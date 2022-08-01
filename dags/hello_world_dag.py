@@ -19,7 +19,7 @@ def api_dag(dag_list_number):
     print("testing the dag")
     return dag_list_number
 
-dag = DAG('hello_world_demo', description='Hello World DAG',
+dag = DAG('hello_world', description='Hello World DAG',
           schedule_interval='0 12 * * *',
           start_date=datetime(2017, 3, 20), 
           catchup=False,
@@ -28,13 +28,5 @@ dag = DAG('hello_world_demo', description='Hello World DAG',
 
 with dag:        
     hello_operator = PythonOperator(task_id='hello_task', python_callable=print_hello, dag=dag)
-    # for dag_number in dag_list:
-    #     op = PythonOperator(
-    #         task_id=f'dag_number_{dag_number}',
-    #         python_callable=api_dag,
-    #         op_kwargs={'dag_list_number': dag_number}
-    #     )
-    #     hello_operator >> op
-
 
 hello_operator
