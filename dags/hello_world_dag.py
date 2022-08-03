@@ -1,11 +1,8 @@
 from datetime import datetime
-from platform import architecture
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.task_group import TaskGroup
-import requests
-import json
 
 args = {
     'depends_on_past': False,
