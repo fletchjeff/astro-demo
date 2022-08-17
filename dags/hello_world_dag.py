@@ -8,7 +8,7 @@ args = {
     'depends_on_past': False,
     'retries': 0
 }
-
+ 
 def print_hello():
     return 'Hello world from first Airflow DAG!'
 
