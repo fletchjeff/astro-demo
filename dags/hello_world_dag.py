@@ -12,7 +12,7 @@ args = {
 def print_hello():
     return 'Hello world from first Airflow DAG!'
 
-dag = DAG('hello_world_gh', description='Hello World DAG',
+dag = DAG('hello_world', description='Hello World DAG',
           schedule_interval=None,
           start_date=datetime(2022, 3, 20), 
           catchup=False,
