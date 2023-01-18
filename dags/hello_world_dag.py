@@ -14,12 +14,12 @@ args = {
     default_args=args
 )
 
-def hello_world_dag():
+def hello_world_dag_demo():
     @task
     def hello_world_task(input_value):
         input_value = input_value + "!"
         return input_value
 
-    hello_world = hello_world_task('Hello world from first Airflow DAG')
+    hello_world_task('Hello world from first Airflow DAG')
 
-hello_world_dag()
+hello_world_dag_demo()
