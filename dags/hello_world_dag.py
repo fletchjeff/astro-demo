@@ -28,4 +28,4 @@ def hello_world_dag_demo_yossi():
 
     hello_world_task('Hello world from first Airflow DAG')
 
-hello_world_dag_demo_test()
+hello_world_dag_demo_yossi()
