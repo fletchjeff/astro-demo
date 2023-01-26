@@ -1,3 +1,2 @@
 apache-airflow-providers-cncf-kubernetes
 pandas
-xgboost
