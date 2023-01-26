@@ -2,6 +2,9 @@ from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task, dag
 import os
+import pip
+
+
 
 args = {
     'depends_on_past': False,
@@ -19,6 +22,7 @@ def hello_world_dag_demo_test():
     @task
     def hello_world_task(input_value):
         print(os.environ['MY_TEST_VAR'])
+        pip.main(['list'])
         input_value = input_value + "!"
         return input_value
 
