@@ -1,6 +1,7 @@
 from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task, dag
+import os
 
 args = {
     'depends_on_past': False,
@@ -17,6 +18,7 @@ args = {
 def hello_world_dag_demo_test():
     @task
     def hello_world_task(input_value):
+        print(os.environ['MY_TEST_VAR'])
         input_value = input_value + "!"
         return input_value
 
