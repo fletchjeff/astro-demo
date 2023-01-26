@@ -18,7 +18,7 @@ args = {
     default_args=args
 )
 
-def hello_world_dag_demo_test():
+def hello_world_dag_demo_yossi():
     @task
     def hello_world_task(input_value):
         print(os.environ['MY_TEST_VAR'])
