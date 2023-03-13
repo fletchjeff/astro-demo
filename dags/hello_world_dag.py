@@ -1,10 +1,6 @@
 from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task, dag
-import os
-import pip
-
-
 
 args = {
     'depends_on_past': False,
@@ -18,14 +14,22 @@ args = {
     default_args=args
 )
 
-def hello_world_dag_demo_yossi():
+def hello_world_dag():
     @task
     def hello_world_task(input_value):
-        print(os.environ['MY_TEST_VAR'])
-        pip.main(['list'])
         input_value = input_value + "!"
         return input_value
 
-    hello_world_task('Hello world from first Airflow DAG')
+    @task
+    def check_if_world_has_ended():
+        from bs4 import BeautifulSoup
+        import requests
+        url = "https://www.hasthelargehadroncolliderdestroyedtheworldyet.com/"
+        req = requests.get(url,verify=False)
+        soup = BeautifulSoup(req.content, 'html.parser')
+        print(soup.prettify())
+        return soup.noscript.string
+    
+    hello_world_task('Hello world from first Airflow DAG') >> check_if_world_has_ended()
 
-hello_world_dag_demo_yossi()
+hello_world_dag()

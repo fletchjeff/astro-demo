@@ -3,3 +3,4 @@ astrocloud
 .env
 airflow_settings.yaml
 logs/
+penv/
