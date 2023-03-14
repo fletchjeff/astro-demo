@@ -3,3 +3,5 @@
 airflow_settings.yaml
 astrocloud
 penv
+__pycache__/
+dags/__pycache__/

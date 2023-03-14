@@ -4,3 +4,4 @@ astrocloud
 airflow_settings.yaml
 logs/
 penv/
+*__pycache__*
