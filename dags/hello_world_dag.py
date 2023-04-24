@@ -1,7 +1,6 @@
 from datetime import datetime
 from airflow.decorators import task, dag
 from airflow.operators.python import PythonOperator
-from airflow.providers.microsoft.azure.operators.container_instances import AzureContainerInstancesOperator
 
 args = {
     'depends_on_past': False,
@@ -40,19 +39,6 @@ def hello_world_dag():
     
     hello_world_task >> check_if_world_has_ended("https://www.hasthelargehadroncolliderdestroyedtheworldyet.com/")
 
-    opr_run_container = AzureContainerInstancesOperator(
-        task_id='run_container',
-        ci_conn_id='azure_container_conn_id',
-        registry_conn_id=None,
-        resource_group='jf-az-demo',
-        name='azure-tutorial-container',
-        image='hello-world:latest',
-        region='West Europe',
-        cpu=1,
-        memory_in_gb=1.5,
-        fail_if_exists=False
-    )
 
-    opr_run_container
 
 hello_world_dag()
