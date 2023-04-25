@@ -39,6 +39,4 @@ def hello_world_dag():
     
     hello_world_task >> check_if_world_has_ended("https://www.hasthelargehadroncolliderdestroyedtheworldyet.com/")
 
-
-
 hello_world_dag()
